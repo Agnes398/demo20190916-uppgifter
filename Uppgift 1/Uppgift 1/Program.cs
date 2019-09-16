@@ -10,6 +10,11 @@ namespace Uppgift_1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please enter a line of text: ");
+            String userResponse = Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine("Thank you for entering: '{0}' ", userResponse);
         }
     }
 }
