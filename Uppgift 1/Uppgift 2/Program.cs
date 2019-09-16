@@ -13,17 +13,10 @@ namespace Uppgift_2
             Console.WriteLine("Please enter a sentance: ");
             string UserResponse = Console.ReadLine();
 
-
             string[] words = UserResponse.Split(' ');
 
-            Console.WriteLine("Words består av {0} ord", words.Length);
 
-            foreach (string s in words)
-            {
-                Console.WriteLine("{0} ({1})", s, s.Length);
-            }
-
-
+            //Stroleksordning på ord från inmatad mening - Uppgift 2.1
             var sortedWords =
             from w in words
             orderby w.Length
@@ -32,50 +25,35 @@ namespace Uppgift_2
 
             foreach (string w in sortedWords)
             {
-                Console.WriteLine(w);
+                Console.WriteLine("{0} ({1})", w, w.Length);
             }
 
-            //int x = 0;
-            //for (int i = 0; i < words.Length; i++)
-            //{
-            //    foreach (string s in words)
-            //    {
-            //        char[] charArray = words[x].ToCharArray();
-            //        Array.Reverse(charArray);
-            //        Console.WriteLine(charArray);
-            //        x++;
-            //    }
-            //}
+
+            //Bakvänd storleksorning på ord från inmatad mening - 2.2
+            var ReverseOrder =
+            from word in words
+            orderby word.Length descending
+            select word;
 
 
+            foreach (string word in ReverseOrder)
+            {
+                Console.WriteLine(word);
+            }
 
-            //int x = 0;
-            //string[] SortedWords = new string[words.Length];
-            //foreach (string a in sortedWords)
-            //{
-            //    SortedWords[x] = a;
-            //}
 
-            //Array.Reverse(SortedWords);
-
-            //foreach (string s in SortedWords)
-            //{
-            //    Console.WriteLine(s);
-            //}
-
-            
-
-            //for (int i = 0; i < words.Length; i++)
-            //{
-            //    foreach (string s in words)
-            //    {
-            //        foreach (char baklängesWords in charArray)
-            //        {
-            //            Console.Write(baklängesWords);
-            //            x++;
-            //        }
-            //    }
-            //}
+            //Skriv ut varje ord baklänges - 2.2 <3
+            int x = 0;
+            for (int i = 0; i < words.Length; i++)
+            {
+                foreach (string s in words)
+                {
+                    char[] chararray = words[x].ToCharArray();
+                    Array.Reverse(chararray);
+                    Console.WriteLine(chararray);
+                    x++;
+                }
+            }
 
         }
     }
