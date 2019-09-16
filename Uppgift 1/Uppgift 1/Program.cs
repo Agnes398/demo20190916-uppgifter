@@ -26,7 +26,6 @@ namespace Uppgift_1
             }
 
             Console.WriteLine("Din mening har {0} ord.", wordcount);
-
         }
     }
 }
