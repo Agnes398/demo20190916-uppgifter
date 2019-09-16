@@ -15,6 +15,19 @@ namespace Uppgift_1
 
             Console.WriteLine();
             Console.WriteLine("Thank you for entering: '{0}' ", userResponse);
+
+
+            int wordcount = 1; //dvs när det första spacet hittas är det ord 2
+            for (int i = 0; i < userResponse.Length; i++)
+            {
+                if (userResponse[i] == ' ')
+                {
+                    wordcount++;
+                }
+            }
+
+            Console.WriteLine("Din mening har {0} ord.", wordcount);
+
         }
     }
 }
