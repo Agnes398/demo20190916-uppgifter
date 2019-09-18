@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Uppgift_3
+namespace Uppgift_4
 {
     class Program
     {
@@ -14,23 +14,20 @@ namespace Uppgift_3
             string mening = Console.ReadLine();
             string[] ord = mening.Split(' '); //Dela upp meningen i ord
 
-            List<int> index = new List<int>();
+            char[] bokstäver = new char[ord.Length];
+
+            foreach (string s in ord)
+            {
+                s.ToCharArray();
+
+            }
 
             for (int i = 0; i < ord.Length; i++)
             {
-                for (int j = i+1; j < ord.Length; j++)
-                {
-                    
-                    if (ord[i] == ord[j])
-                    {
-                        Console.WriteLine("{0}", ord[i]);
-                    }
 
-                }
+
+                
             }
-            
-
-
 
         }
     }
