@@ -16,11 +16,6 @@ namespace Uppgift_4
 
             char[] bokstäver = new char[ord.Length];
 
-            foreach (string s in ord)
-            {
-                s.ToCharArray();
-
-            }
 
             for (int i = 0; i < ord.Length; i++)
             {
@@ -28,6 +23,15 @@ namespace Uppgift_4
 
                 
             }
+
+            foreach (string s in ord)
+            {
+
+                char[] charArray = s.ToCharArray();
+
+            }
+
+            //använd Contains för att ta redo om ett annat ord innehåller en bokstav
 
         }
     }

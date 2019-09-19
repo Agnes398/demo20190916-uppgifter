@@ -10,40 +10,32 @@ namespace Uppgift_5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Var snäll och mata in en mening: ");
-            //List<string> ord = new List<string>();
-            string userInput = Console.ReadLine();
-            string[] ord = userInput.Split(' '); //Dela upp meningen i ord
+            Console.WriteLine("Var snäll och mata in en mening: "); //mata in en mening
 
-            foreach (string s in ord)
+            System.Collections.ArrayList MyList;
+            MyList = new System.Collections.ArrayList(); //skapar lista
+
+
+            string key = ""; //skapar ett objekt som ska temporärt innehålla användarens ord
+
+            //användaren matar in ord tills de skriver EXIT, då avslutas programmet
+            do
             {
-
-                char[] charArray = s.ToCharArray();
-
-            }
-
-            //använd Contains för att ta redo om ett annat ord innehåller en bokstav
-
-
-
-
-            for (int i = 0; i < charArray.; i++)
-            {
-                //userInput = (Console.ReadLine());
-                //ord.Add(userInput);
-
-                if (userInput == "AVSLUTA")
+                key = Console.ReadLine();
+                if (key != "EXIT")
                 {
-                    break;
+                    MyList.Add(key);
                 }
+
+            } while (key != "EXIT");
+
+            Console.WriteLine("Tack, du matade in {0} ord", MyList.Count); 
+
+            //skriv ut varje ord som matades in
+            foreach (string s in MyList)
+            {
+                Console.Write("{0} ", s);
             }
-
-            //do
-            //{
-
-            //    ord.Add(Console.ReadLine());
-            //} while ();
-            //Console.ReadLine();
 
         }
     }
