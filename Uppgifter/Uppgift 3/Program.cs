@@ -14,7 +14,9 @@ namespace Uppgift_3
             string mening = Console.ReadLine();
             string[] ord = mening.Split(' '); //Dela upp meningen i ord
 
-            List<int> index = new List<int>();
+            int räknare = 1;
+
+            System.Collections.ArrayList index = new System.Collections.ArrayList();
 
             for (int i = 0; i < ord.Length; i++)
             {
@@ -23,7 +25,14 @@ namespace Uppgift_3
                     
                     if (ord[i] == ord[j])
                     {
-                        Console.WriteLine("{0}", ord[i]);
+                        
+
+                        index.Add(new Index() { index = räknare++, ord = ord[i] });
+                        
+                        foreach (Index x in index) {
+                            Console.WriteLine("({0}) {1}", x.index, x.ord);
+                        }
+
                     }
 
                 }
